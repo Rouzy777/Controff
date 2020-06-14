@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Controff</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <section class="bg-sides">
+            <nav class="navbar w-100 position-absolute bg-transparent">
+                <img src="logo.png" class='logo us-none' alt="Controff">
+                <a @click='login' style='font-size: 18px' class="navbar-text align-self-start cursor p-2 font-weight-bold text-light btn btn-dark">Вход</a>
+            </nav>
+            <div class="container d-flex justify-content-center h-100m">
+                <div class="row align-self-center w-100 roboto">
+                    <div class="col-lg-6 col-12 text-lg-left text-center text-light">
+                        <h1 class='title font-weight-bold mb-3 us-none'>Controff</h1>
+                        <h2 class='font-weight-bold'>Экономьте время и деньги</h2>
+                        <p style='font-size: 20px'>Установите умный замок от <span class="font-weight-bold">DeLock</span> и вам больше не придётся волноваться о встрече опаздывающих гостей, передаче ключей и оплате посредника.</p>
+                    </div>
+                    <div class="col-lg-6 justify-content-start col-12">
+                        <img class='img-fluid' src="imglock.png" alt="Умный замок">
+                    </div>
+                    <!--div class="col-lg-6 pr-5 col-12 text-lg-right text-center text-light">
+                        <h2 class='font-weight-bold'>Экономьте время и деньги</h2>
+                        <p style='font-size: 19.5px'>Установите умный замок от <span class="font-weight-bold">DeLock</span> и вам больше не придётся волноваться о встрече опаздывающих гостей, передаче ключей и оплате посредника.</p>
+                    </div-->
+                </div>
+            </div>
+        </section>
+        <section class="h-100m d-flex">
+            <div class="container align-self-center">
+                <div class="col-12 mx-auto px-0 row">
+                    <div class="col-lg-6 col-12 text-center my-lg-0 my-4 align-self-center">
+                        <iframe class='border rounded' width="320" height="561" src="https://www.youtube.com/embed/Not3HKxGQT4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-lg-6 col-12 align-self-center">
+                        <h5 class='font-weight-bold bg-warning d-inline rounded p-1'>Умный замок</h5>
+                        <h1 class="font-weight-bold mt-2">DeLock</h1>
+                        <p style='font-size: 19.5px'>
+                            Теперь ваши гости открывают двери самостоятельно. Умный замок <span class='font-weight-bold'>DeLock</span> — принципиально новый формат вашего бизнеса. Стильный, компактный и простой в использовании замок легко монтируется в дверь и полностью освобождает вас от передачи ключей гостю. С помощью личного кабинета, менее чем за минуту, вы предоставляете гостю доступ в квартиру. Гости получают удобство, а вы — прибыль.
+                            <br><br>
+                            Повышенный интерес к вашим объектам недвижимости. Статистика по предоставлению доступов, а также история проходов в объект. Конкурентное преимущество на рынке аренды. И, наконец, экономия вашего личного времени. Внедряя в свое заведение инновации от Controff, вы обслуживаете клиентов в ритме XXI века.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="h-100m py-5 d-flex bg-main-second">
+            <div class='p-0 align-self-center container'>
+                <h1 class='text-center mb-5 font-weight-bold'>DeLock в работе</h1>
+                <div class="row mx-0">
+                    <div class="p-0 text-center col-12 col-lg">
+                        <img class='height-90 us-none' src="https://img.icons8.com/cotton/360/000000/settings--v1.png" alt="Настройки">
+                        <h5 class='mt-4 mb-3 font-weight-bold'>Настройки</h5>
+                        <p class='mx-lg-0 mx-4'>Входите в личный кабинет и формируете настройки доступа в объект недвижимости
+                        </p>
+                    </div>
+                    <div class='mx-auto mx-lg-2 align-self-center mb-lg-4 mb-0'>
+                        <img class='d-none d-lg-block height-45' alt="" src="https://img.icons8.com/ios/150/000000/long-arrow-right-filled.png">
+                        <img class='d-block mb-4 d-lg-none height-45' alt="" src="https://img.icons8.com/ios/150/000000/down-filled.png">
+                    </div>
+                    <div class="p-0 text-center col-12 col-lg">
+                        <img class='height-90 us-none' src="https://img.icons8.com/cotton/360/000000/sent.png" alt="Рассылка">
+                        <h5 class='mt-4 mb-3 font-weight-bold'>Рассылка</h5>
+                        <p class='mx-lg-0 mx-4'>В личном кабинете делаете рассылку доступа клиенту. Может быть на почту или смс на телефон
+                        </p>
+                    </div>
+                    <div class='mx-auto mx-lg-2 align-self-center mb-lg-4 mb-0'>
+                        <img class='d-none d-lg-block height-45' alt="" src="https://img.icons8.com/ios/150/000000/long-arrow-right-filled.png">
+                        <img class='d-block mb-4 d-lg-none height-45' alt="" src="https://img.icons8.com/ios/150/000000/down-filled.png">
+                    </div>
+                    <div class="p-0 text-center col-12 col-lg">
+                        <img class='height-90 us-none' src="https://img.icons8.com/cotton/360/000000/circled-play.png" alt="Процесс">
+                        <h5 class='mt-4 mb-3 font-weight-bold'>Процесс</h5>
+                        <p class='mx-lg-0 mx-4'>
+                            Клиент подходит к двери объекта и вводит полученный код доступа на панели ввода. Если код верный, то клиент попадает в объект
+                        </p>
+                    </div>
+                    <div class='mx-auto mx-lg-2 align-self-center mb-lg-4 mb-0'>
+                        <img class='d-none d-lg-block height-45' alt="" src="https://img.icons8.com/ios/150/000000/long-arrow-right-filled.png">
+                        <img class='d-block mb-4 d-lg-none height-45' alt="" src="https://img.icons8.com/ios/150/000000/down-filled.png">
+                    </div>
+                    <div class="p-0 text-center col-12 col-lg">
+                        <img class='height-90 us-none' src="https://img.icons8.com/cotton/360/000000/smart-home-shield.png" alt="Контроль">
+                        <h5 class='mt-4 mb-3 font-weight-bold'>Контроль</h5>
+                        <p class='mx-lg-0 mx-4'>
+                            В личном кабинете вы видите все предоставленные доступы, а также когда клиент зашел в объект. В случае необходимости доступ можно удалить
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-5 h-40-spec bg-warning d-flex">
+            <div class="container text-light text-center align-self-center">
+                <h1 class='title-block font-weight-bold'>«Инновация отличает лидера от последователя»</h1>
+                <h5 class='mt-2 w-50 mx-auto'>Стив Джобс</h5>
+                <a class='btn btn-light btn-lg mt-4 link-button font-weight-bold' href="#contacts">Заказать обратный звонок</a>
+            </div>
+        </section>
+        <section class="h-100m py-5 d-flex">
+            <div class="container align-self-center text-center">
+                <h1 class='font-weight-bold title-block mb-2'>Преимущества DeLock</h1>
+                <div class='row mx-3 mt-5'>
+                    <div class="col">
+                        <img class='height-90' src="https://img.icons8.com/cotton/360/000000/ruble--v1.png" alt="Экономия денег">
+                        <h5 class='mt-2 font-weight-bold'>Экономия денег</h5>
+                        <p class='opacity-text'>
+                            Больше не нужно тратить деньги на дорогу, а также на замену замков в случае если были утеряны ключи
+                        </p>
+                    </div>
+                    <div class="col-md-4 my-2 my-md-0 col-12">
+                        <img class='height-90' src="https://img.icons8.com/cotton/360/000000/time.png" alt="Экономия времени">
+                        <h5 class='mt-2 font-weight-bold'>Экономия времени</h5>
+                        <p>
+                            Приезжайте в квартиру только тогда, когда это действительно необходимо
+                        </p>
+                    </div>
+                    <div class="col">
+                        <img class='height-90' src="https://img.icons8.com/cotton/360/000000/smart-home-connection.png" alt="Контроль">
+                        <h5 class='mt-2 font-weight-bold'>Контроль</h5>
+                        <p>
+                            Контроль всех действий клиента у вас в телефоне. Вы можете сформировать доступ к объекту, а также удалить его. Вам доступна полная история проходов клиента в ваш объект недвижимости
+                        </p>
+                    </div>
+                    <div class="w-100 d-none d-md-block mt-4"></div>
+                    <div class="col-12 col-md-4 my-2 my-md-0 mx-auto">
+                        <img class='height-90' src="https://img.icons8.com/cotton/360/000000/innovation.png" alt="Маркетинг">
+                        <h5 class="mt-2 font-weight-bold">Уникальность</h5>
+                        <p>
+                            Коды доступа можно назначить для каждого клиента со сроком действия
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4 mx-auto">
+                        <img class='height-90' src="https://img.icons8.com/cotton/360/000000/battery.png" alt="Автономность">
+                        <h5 class='mt-2 font-weight-bold'>Автономность</h5>
+                        <p>
+                            DeLock работает от батареек. Батареек хватает примерно на 3 месяца
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4 mx-auto">
+                        <img class='height-90' src="https://img.icons8.com/cotton/360/000000/facebook-like--v2.png" alt="Удобство">
+                        <h5 class='mt-2 font-weight-bold'>Удобство</h5>
+                        <p>
+                            Занимайтесь своими делами, пока DeLock работает на вас
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="h-100m py-5 d-flex bg-main-second">
+            <div class='p-0 align-self-center container'>
+                <h1 class='text-center mb-5 font-weight-bold'>Места использования</h1>
+                <div class="row mx-0">
+                    <div class="p-0 text-center col-12 col-lg">
+                        <img class='height-90 us-none' src="https://img.icons8.com/cotton/360/000000/company.png" alt="Выдача карты">
+                        <h5 class='mt-4 mb-3 font-weight-bold'>Квартиры</h5>
+                    </div>
+                    <div class="p-0 text-center col-12 col-lg">
+                        <img class='height-90 us-none' src="https://img.icons8.com/cotton/360/000000/empty-bed--v2.png" alt="Начало работы">
+                        <h5 class='mt-4 mb-3 font-weight-bold'>Хостелы</h5>
+                    </div>
+                    <div class="p-0 text-center col-12 col-lg">
+                        <img class='height-90 us-none' src="https://img.icons8.com/cotton/360/000000/bed.png" alt="Процесс">
+                        <h5 class='mt-4 mb-3 font-weight-bold'>Гостиницы</h5>
+                    </div>
+                    <div class="p-0 text-center col-12 col-lg">
+                        <img class='height-90 us-none' src="https://img.icons8.com/cotton/360/000000/business--v1.png" alt="Пополнение">
+                        <h5 class='mt-4 mb-3 font-weight-bold'>Офисы</h5>
+                    </div>
+                    <div class="p-0 text-center col-12 col-lg">
+                        <img class='height-90 us-none' src="https://img.icons8.com/cotton/360/000000/warehouse.png" alt="Пополнение">
+                        <h5 class='mt-4 mb-3 font-weight-bold'>Складские помещения</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='py-5 h-100m d-flex' id="prices">
+            <div class="container px-0 align-self-center">
+                <h1 class="font-weight-bold text-center title-block">Цены</h1>
+                <div class="row justify-content-center mx-3 mx-md-0 mt-5">
+                    <div class="card px-0 col-xl-4">
+                        <div class="card-body">
+                            <h3 class="card-title text-center font-weight-bold text-success"><small class='text-muted'>пакет</small> Standart</h3>
+                            <div class="card-text border-top pt-4 mt-4 row">
+                                <div class="col-1 pr-0 align-self-center"><i class="fa fa-check text-success"></i></div>
+                                <div class="col-6 font-weight-bold">Замок DeLock</div>
+                                <div class="col-5"><span class="font-weight-bold">19 999 ₽</span> <span class='text-muted' style='font-size: 13px'>/шт</span></div>
+                            </div>
+                            <div class="card-text border-top border-bottom py-3 mt-4 row">
+                                <div class="col-1 pr-0 align-self-center"><i class="fa fa-check text-success"></i></div>
+                                <div class="col-6 align-self-center font-weight-bold">Личный кабинет</div>
+                                <div class="col-5"><span class="font-weight-bold">Бесплатно</span> <span class='text-muted' style='font-size: 13px'>*</span></div>
+                            </div>
+                            <div class="card-text border-bottom py-3 row">
+                                <div class="col-1 pr-0 align-self-center"><i class="fa fa-check text-success"></i></div>
+                                <div class="col-6 font-weight-bold">Техподдержка</div>
+                                <div class="col-5"><span class="font-weight-bold">Бесплатно</span></div>
+                            </div>
+                            <p class="card-text card-info mt-3">* - первые 3 месяца, далее 500₽/месяц</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contacts" class="btn btn-warning pb-2 link-button font-weight-bold w-100">Сделать заказ</a>
+                        </div>
+                    </div>
+                    <div class="mx-xl-3"></div>
+                    <div class="card px-0 col-xl-4 my-xl-0 my-4">
+                        <div class="card-body">
+                            <h3 class="card-title text-center font-weight-bold text-success"><small class='text-muted'>пакет</small> Single</h3>
+                            <div class="card-text border-top pt-4 mt-4 row">
+                                <div class="col-1 pr-0 align-self-center"><i class="fa fa-check text-success"></i></div>
+                                <div class="col-6 font-weight-bold">Замок DeLock</div>
+                                <div class="col-5"><span class="font-weight-bold">Бесплатно</span></div>
+                            </div>
+                            <div class="card-text border-top py-3 mt-4 row">
+                                <div class="col-1 pr-0 align-self-center"><i class="fa fa-check text-success"></i></div>
+                                <div class="col-6 font-weight-bold">Установка</div>
+                                <div class="col-5"><span class="font-weight-bold">Бесплатно</span></div>
+                            </div>
+                            <div class="card-text border-top py-3 row">
+                                <div class="col-1 pr-0 align-self-center"><i class="fa fa-check text-success"></i></div>
+                                <div class="col-6 font-weight-bold">Техподдержка</div>
+                                <div class="col-5"><span class="font-weight-bold">Бесплатно</span></div>
+                            </div>
+                            <div class="card-text border-top border-bottom py-3 mb-3 row">
+                                <div class="col-1 pr-0 align-self-center"><i class="fa fa-check text-success"></i></div>
+                                <div class="col-6 font-weight-bold">Личный кабинет</div>
+                                <div class="col-5"><span class="font-weight-bold">Бесплатно</span></div>
+                            </div>
+                            <p class="card-text card-info text-center font-weight-bold mt-3">1999₽<span class='text-muted font-weight-light' style='font-size: 13px'> /месяц</span></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contacts" class="btn btn-warning link-button pb-2 font-weight-bold w-100">Сделать заказ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contacts">
+            <div class="bg-contacts py-5 py-lg-0 d-flex h-75m">
+                <form action="#contacts" method="POST" class="container px-0 align-self-center">
+                    <div class="contact-form bg-white w-75 d-flex align-items-center mx-auto text-center p-5 m-3">
+                        <div class='contact-before-block'>
+                            <h2 class='font-weight-bold'>Закажите обратный звонок и получите скидку -10%</h2>
+                            <p class="mt-3">Наш менеджер свяжется с вами для расчета стоимости</p>
+                            <div class='row mx-auto mt-5'>
+                                <input name="name" class='col-lg mx-lg-2 font-weight-bold' placeholder="Ваше имя" type="text" autocomplete='off' required>
+                                <input name="phone" class='col-lg my-lg-0 my-2 mx-lg-2 font-weight-bold ' placeholder="Ваш телефон" type="number" autocomplete='off' required>
+                                <button name="submit" class="col p-2 mx-lg-2 button-submit font-weight-bold">Отправить</button>
+                            </div>
+                        </div>
+                        <div class='contact-after-block d-none mx-auto'>
+                            <i class="fa fa-5x fa-check text-success"></i>
+                            <div class='mt-4'>
+                                <h2 class="font-weight-bold">Успешно отправлено</h2>
+                                <h5 class='text-muted'>Мы свяжемся с вами в ближайшее время.</h5>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="py-5 d-flex h-45m">
+                <div class="align-self-center text-center mx-auto">
+                    <p class='bg-success d-inline p-2 rounded font-weight-bold text-light'>НАШИ КОНТАКТЫ</p>
+                    <h1 class='contacts-title mt-5'>+7 (985) 948-18-38</h1>
+                    <!--h1 class='display-4'>aleksandr@gmail.com</h1-->
+                </div>
+            </div>
+        </section>
+        <div class="modal fade" v-on:keyup.enter="signin" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content bg-gray">
+                    <div style='border-bottom: none' class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Вход</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input class='form-control input-orange' ref='login' type="text" placeholder="Логин">
+                        <br>
+                        <input class='form-control input-orange' ref='pass' type="password" placeholder="Пароль">
+                    </div>
+                    <div style='border-top: none' class="modal-footer">
+                        <button type="button" class="btn btn-special text-light font-weight-bold" @click='signin'>Войти</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='site.js'></script>
+    <script src='app.js'></script>
+</body>
+</html>
