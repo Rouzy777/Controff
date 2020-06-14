@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Futura PT Book';
-    src: url('FuturaPT-Book.ttf') format('truetype');
+    src: url('fonts/FuturaPT-Book.ttf') format('truetype');
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'Futura PT Book';
-    src: url('FuturaPT-Demi.ttf') format('truetype');
+    src: url('fonts/FuturaPT-Demi.ttf') format('truetype');
     font-weight: bold;
 }
 
@@ -22,6 +22,10 @@ body, html {
 
 .h-92m {
     min-height: 91.5vh;
+}
+
+.h-75m {
+    min-height: 75vh;
 }
 
 .h-75m {
@@ -53,18 +57,26 @@ body, html {
 }
 
 .bg-sides {
-    background-image: url(BG222.png);
+    background-image: url(imgs/BG222.png);
     -webkit-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.bg-img-motivation {
+    background-image: url(imgs/motivation2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .bg-contacts {
-    background-image: url(bottombg4.jpg);
+    background-image: url(imgs/bottombg4.jpg);
     -webkit-background-size: cover;
     background-size: cover;
 }
 
-input {
+.contact-form input {
     border: none;
     border-bottom: 2.5px solid rgba(0,0,0,0.1);
     font-size: 16px;
@@ -72,9 +84,9 @@ input {
     transition: 400ms;
 }
 
-input:focus {
+.contact-form input:focus {
     outline: none;
-    border-bottom: 2.5px solid #FED434 !important;
+    border-bottom: 2.5px solid #FF9963 !important;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -84,17 +96,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .contact-form {
-    box-shadow: 0 0 20px rgba(255,255,255, 1)
+    box-shadow: 0 0 20px rgba(255,255,255, 1);
+    min-height: 33.7vh;
 }
 
 .contact-form button {
     background: none;
-    border: 3px solid #FED434;
+    border: 3px solid #FF9963;
     transition: 300ms;
 }
 
 .contact-form button:hover {
-    background-color: #FED434;
+    background-color: #FF9963;
 }
 
 .logo {
@@ -292,8 +305,8 @@ input[type='radio']:checked:after, .orange-checkbox:checked:after {
         left: -1.75px;
     }
     
-    .contacts-title {
-        font-size: 36px;
+    .contact-title {
+        font-size: 25px;
     }
 }
 
